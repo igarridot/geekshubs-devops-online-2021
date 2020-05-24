@@ -1,7 +1,13 @@
-FROM nginx:latest
+FROM nginx:1.17.8-alpine
 
+# Copiar el site conf
 COPY acme-site.conf /etc/nginx/conf.d/default.conf
 
-RUN mkdir html
+# Crear carpeta para mi aplicación
+RUN mkdir -p /www/data
 
-COPY index.html html/index.html
+# Cambiar a ese directorio
+WORKDIR /www/data
+
+# Copiar el index como index.html
+COPY index.html .
