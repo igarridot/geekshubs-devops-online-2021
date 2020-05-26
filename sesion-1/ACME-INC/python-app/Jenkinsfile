@@ -1,0 +1,28 @@
+pipeline {
+    agent any
+    stages {
+        stage('Preparations') {
+            steps {
+                script {
+                    echo "Preparing!"
+                }
+            }
+        }
+        stage('Test') {
+            steps {
+                script {
+                    echo "Testing!"
+                }
+            }
+        }
+        stage('Build') {
+            steps {
+                script {
+                    sh """
+                        docker -v
+                    """
+                }
+            }
+        }
+    }
+}
