@@ -7,7 +7,7 @@ backgroundImage: url('./../../img/background-white.png')
 color: #e7252f
 marp: true
 ---
-<!-- _backgroundImage: url('./../img/background-red.png') -->
+<!-- _backgroundImage: url('./../../img/background-red.png') -->
 <!-- _color: white -->
 
 # 2.5 Desplegando Contenedores
