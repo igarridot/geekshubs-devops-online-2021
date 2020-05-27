@@ -27,6 +27,14 @@ Para instalarlo podemos seguir las guías oficiales:
 - macOS: https://docs.docker.com/docker-for-mac/install/
 - Linux (ubuntu): https://docs.docker.com/engine/install/ubuntu/
 
+También, si te resulta más cómodo crear una máquina virtual sería recomendable tener instalado:
+
+- VirtualBox
+- Vagrant
+    - Usaremos Ubuntu 18.04 LTS como OS base, `vagrant box add ubuntu/bionic64`
+
+En la segunda sesión tocaremos algo de Kubernetes y para que sea más fácil lo haremos directamente sobre ubuntu 18.04. Así que o bien Virtualbox o Vagrant. Si no sabes, no te preocupes. En la sesión podemos verlo.
+
 Además es muy recomendable tener a mano un buen editor de código con el que nos sintamos cómodos. Personalmente recomiendo `vscode` de Microsoft. Es multiplataforma y tiene infinidad de plugins in configuraciones.
 
 - vscode: https://code.visualstudio.com/
