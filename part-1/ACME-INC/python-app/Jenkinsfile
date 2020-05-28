@@ -18,9 +18,19 @@ pipeline {
         stage('Build') {
             steps {
                 script {
-                    sh """
-                        docker -v
-                    """
+                    dockerImage = docker.build("acme-app:${env.BRANCH_NAME}-${env.BUILD_ID}")
+                }
+            }
+        }
+        stage('Push docker image') {
+            when {
+                expression { env.BRANCH_NAME == 'master' }
+            }
+            steps {
+                script {
+                    docker.withRegistry('http://localhost:5000') {
+                        dockerImage.push()
+                    }
                 }
             }
         }
