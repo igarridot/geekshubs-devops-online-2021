@@ -7,8 +7,8 @@
 ## Instalar software que necesitaremos
 
 1) `vagrant ssh`
-2) `cp -ar /vagrant/manifests .`
-3) `cp -ar /vagrant/acme-inc .`
+2) `cp -ar /vagrant/part-3/manifests .`
+3) `cp -ar /vagrant/part-3/acme-inc .`
 4) `kubectl apply -f manifests/gogs.yml`
 5) `kubectl apply -f manifests/jenkins-sa.yml`
 6) `kubectl apply -f manifests/jenkins.yml`
@@ -18,7 +18,7 @@
 URL -> http://10.10.10.10:8000
 
 1) `kubectl get po`
-2) `kubectl logs jenkins-xxxxx`
+2) `kubectl logs -f jenkins-xxxxx`
 Extraer el token
 
 Seguir el wizard.

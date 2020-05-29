@@ -13,7 +13,7 @@ spec:
   serviceAccountName: jenkins
   containers:
   - name: docker
-    image: docker:latest
+    image: docker:18.09.9
     command:
     - cat
     tty: true
