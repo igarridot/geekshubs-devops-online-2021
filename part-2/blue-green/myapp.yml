@@ -63,6 +63,8 @@ spec:
     app: myapp
     version: v1
   type: NodePort
+  externalIPs:
+  - 10.10.10.10
   ports:
     - protocol: TCP
       port: 80

@@ -11,3 +11,10 @@ sudo microk8s.enable dns registry
 
 echo "Installing docker daemon"
 sudo snap install docker
+
+echo "Adding permissions to the user vagrant"
+sudo usermod -a -G microk8s vagrant
+sudo chown -f -R vagrant home/vagrant/.kube
+
+echo "Alias kubectl"
+sudo snap alias microk8s.kubectl kubectl

@@ -31,6 +31,8 @@ spec:
   selector:
     app: myapp
   type: ClusterIP
+  externalIPs:
+  - 10.10.10.10
   ports:
     - protocol: TCP
       port: 9000
