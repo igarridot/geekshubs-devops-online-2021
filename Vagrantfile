@@ -24,8 +24,8 @@ Vagrant.configure("2") do |config|
     apt-get update
   SHELL
 
-  config.vm.provision "microk8s", type: "shell", run: "never", path: "./scripts/provisioning/microk8s.sh"
+  config.vm.provision "microk8s", type: "shell", run: "never", path: "./scripts/microk8s.sh"
 
-  config.vm.provision "docker", type: "shell", run: "never", path: "./scripts/provisioning/docker.sh"
+  config.vm.provision "docker", type: "shell", run: "never", path: "./scripts/docker.sh"
 
 end
