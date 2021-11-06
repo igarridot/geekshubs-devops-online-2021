@@ -30,7 +30,7 @@ spec:
     app: loadbalancer
   type: NodePort
   externalIPs:
-  - 10.10.10.10
+  - 192.168.56.10
   ports:
     - protocol: TCP
       port: 80

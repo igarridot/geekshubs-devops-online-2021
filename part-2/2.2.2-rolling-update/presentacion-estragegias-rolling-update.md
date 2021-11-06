@@ -10,7 +10,7 @@ marp: true
 <!-- _backgroundImage: url('./../../img/background-red.png') -->
 <!-- _color: white -->
 
-# 2.5 Desplegando Contenedores
+# 4 Desplegando Contenedores
 
 ---
 ![bg opacity:.2](https://media.giphy.com/media/Aff4ryYiacUO4/giphy.gif)
@@ -49,6 +49,8 @@ BBB
 
 `vagrant up --provision-with microk8s`
 
+`vagrant ssh`
+
 ---
 ![bg auto opacity:.2](https://upload.wikimedia.org/wikipedia/commons/thumb/3/39/Kubernetes_logo_without_workmark.svg/1200px-Kubernetes_logo_without_workmark.svg.png)
 # Rolling Update
@@ -60,6 +62,12 @@ _if_ vagrant -> Vamos a copiar los ficheros a la carpeta `/home` dentro de la m�
 
 ```
 cp -a /vagrant/part-2/ .
+```
+
+Y cambiamos al directorio de este apartado:
+
+```
+cd part-2/2.2.2-rolling-update
 ```
 
 ---
@@ -97,25 +105,25 @@ sudo microk8s.ctr image import lb:v1.tar
 
 Es hora de desplegar nuestra aplicación. Primero la `v1`.
 
-`microk8s.kubectl -n default apply -f myapp.yml`
+`kubectl -n default apply -f myapp.yml`
 
 Y luego exponerla mediante el balanceador:
 
-`microk8s.kubectl apply -f lb.yml`
+`kubectl apply -f lb.yml`
 
 ---
 # Rolling Update
 
-`microk8s.kubectl get services`
-`microk8s.kubectl get pod`
-`microk8s.kubectl get deployment`
+`kubectl get services`
+`kubectl get pod`
+`kubectl get deployment`
 
 ---
 # Rolling Update
 
 Ahora vamos a deplegar nuestra versión `v2`.
 
-- `microk8s.kubectl edit deploy myapp`
+- `kubectl edit deploy myapp`
 
 y sustituimos `v1` por `v2` en el `tag` de la imagen del contenedor.
 

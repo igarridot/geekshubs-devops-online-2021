@@ -10,7 +10,7 @@ marp: true
 <!-- _backgroundImage: url('./../../img/background-red.png') -->
 <!-- _color: white -->
 
-# 2.5 Desplegando Contenedores
+# 4 Desplegando Contenedores
 
 ---
 ![bg opacity:.2](https://66.media.tumblr.com/35767e66058164ec09bcd823c2a0868a/tumblr_n78rw4FsRC1tebgrfo2_500.gif)
@@ -29,7 +29,12 @@ marp: true
 ---
 # Shadow
 
-`vagrant up --provision-with microk8s`
+```
+vagrant up --provision-with microk8s
+vagrant ssh
+cp -a /vagrant/part-2/ .
+cd part-2/2.2.4-shadow/
+```
 
 ---
 # Shadow
@@ -52,8 +57,8 @@ Vamos a copiarle las imágenes de docker a kubernetes para que las "encuentre".
 sudo docker save myapp:v1 > myapp:v1.tar
 sudo docker save myapp:v2 > myapp:v2.tar
 sudo docker save lb:v1 > lb:v1.tar
-microk8s.ctr import myapp:v1.tar
-microk8s.ctr import myapp:v2.tar
+microk8s.ctr image import myapp:v1.tar
+microk8s.ctr image import myapp:v2.tar
 microk8s.ctr image import lb:v1.tar
 ```
 
@@ -62,11 +67,11 @@ microk8s.ctr image import lb:v1.tar
 
 Vamos a desplegar la infraestructura
 
-`microk8s.kubectl -n default apply -f myapp.yml`
+`kubectl -n default apply -f myapp.yml`
 
 Y luego exponerla mediante el balanceador:
 
-`microk8s.kubectl apply -f lb.yml`
+`kubectl apply -f lb.yml`
 
 ---
 # Shadow
@@ -84,8 +89,8 @@ Utilizamos `goreplay` como _sidecar_ de nginx para hacer _forward_ de las reques
 
 Veamos el shadow en acción:
 
-- `microk8s.kubectl logs -f myapp-v2-xxxx`
-- `microk8s.kubectl logs -f myapp-v1-xxxx`
+- `kubectl logs -f myapp-v2-xxxx`
+- `kubectl logs -f myapp-v1-xxxx`
 
 y hagamos peticiones:
 

@@ -34,7 +34,7 @@ metadata:
     app: myapp
     version: v2
 spec:
-  replicas: 1
+  replicas: 3
   selector:
     matchLabels:
       app: myapp
@@ -61,9 +61,10 @@ metadata:
 spec:
   selector:
     app: myapp
-  type: ClusterIP
+    version: v1
+  type: NodePort
   externalIPs:
-  - 10.10.10.10
+  - 192.168.56.10
   ports:
     - protocol: TCP
       port: 80

@@ -9,5 +9,5 @@ RUN mkdir -p /www/data
 # Cambiar a ese directorio
 WORKDIR /www/data
 
-# Copiar el index como index.html
-COPY index.html .
+# Copiar el contenido de la aplicación al contenedor
+COPY html/ .

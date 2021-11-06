@@ -25,7 +25,7 @@ marp: true
 ---
 # Comandos útiles
 
-- `microk8s.kubectl` -> Herramienta de control de Kuberntes
+- `kubectl` -> Herramienta de control de Kuberntes
 
 Kubectl cheatsheet -> https://kubernetes.io/docs/reference/kubectl/cheatsheet/
 

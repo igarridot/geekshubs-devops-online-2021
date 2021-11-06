@@ -10,7 +10,7 @@ marp: true
 <!-- _backgroundImage: url('./../../img/background-red.png') -->
 <!-- _color: white -->
 
-# 2.5 Desplegando Contenedores
+# 4 Desplegando Contenedores
 
 ---
 # Blue/Green
@@ -32,13 +32,19 @@ Una vez pasamos de A a B, si tenemos problemas podemos hacer `roll back` instant
 ---
 # Blue/Green
 
-`vagrant up --provision-with microk8s`
+```
+vagrant up --provision-with microk8s
+vagrant ssh
+cp -a /vagrant/part-2/ .
+cd part-2/2.2.3-blue-green/
+```
 
 ---
 # Blue/Green
 
 Vamos a crear las imágenes de Docker necesarias primero:
 
+- `sudo docker build -t lb:v1 -f Dockerfile-lb .`
 - `sudo docker build -t myapp:v1 -f Dockerfile-myapp .`
 - Modificamos `index.html` y:
 - `sudo docker build -t myapp:v2 -f Dockerfile-myapp .`
@@ -51,10 +57,12 @@ Vamos a crear las imágenes de Docker necesarias primero:
 Vamos a copiarle las imágenes de docker a kubernetes para que las "encuentre".
 
 ```
+sudo docker save lb:v1 > lb:v1.tar
 sudo docker save myapp:v1 > myapp:v1.tar
 sudo docker save myapp:v2 > myapp:v2.tar
-microk8s.ctr import myapp:v1.tar
-microk8s.ctr import myapp:v2.tar
+microk8s.ctr image import lb:v1.tar
+microk8s.ctr image import myapp:v1.tar
+microk8s.ctr image import myapp:v2.tar
 ```
 
 ---
@@ -62,11 +70,11 @@ microk8s.ctr import myapp:v2.tar
 
 Es hora de desplegar nuestra aplicación. Ahora vamos a deplegar la `v1` y la `v2` de forma simultanea, pero únicamente la `v1` recibe tráfico.
 
-`microk8s.kubectl -n default apply -f myapp.yml`
+`kubectl -n default apply -f myapp.yml`
 
 Y luego exponerla mediante el balanceador:
 
-`microk8s.kubectl apply -f lb.yml`
+`kubectl apply -f lb.yml`
 
 ---
 # Blue/Green
@@ -74,7 +82,7 @@ Y luego exponerla mediante el balanceador:
 Tenemos `v1` recibiendo tráfico. Ahora es momento de cambiar a `v2`. Para ello:
 
 - Editamos el `service` para decirle que ahora conecte a los `pods` de `v2`.
-- `microk8s.kubectl edit service myapp`
+- `kubectl edit service myapp`
 
 ---
 # Blue/Green

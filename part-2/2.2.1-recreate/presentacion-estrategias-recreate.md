@@ -10,7 +10,7 @@ marp: true
 <!-- _backgroundImage: url('./../../img/background-red.png') -->
 <!-- _color: white -->
 
-# 2.5 Desplegando Contenedores
+# 4 Desplegando Contenedores
 
 ---
 ![bg opacity:.2](https://media.giphy.com/media/MS0fQBmGGMaRy/giphy.gif)
@@ -24,7 +24,7 @@ Reemplazar la actual versión por una nueva.
 Apagar y encender.
 
 ---
-# Recreate
+# Recreate - ¿Cuándo utilizarlo?
 
 - Cuando nuestra aplicación no esté preparada para trabajar con más de una réplica.
 - Cuando nuestro despliegue sea manual, e.g. ftp a un directorio.
@@ -52,7 +52,8 @@ This message shows that your installation appears to be working correctly.
 
 ```
 vagrant ssh
-sudo su
+sudo su -
+cd /vagrant/part-2/2.2.1-recreate/
 vim|nano Dockerfile
 vim|nano index.html
 vim|nano myapp.conf
@@ -93,7 +94,7 @@ Y sustituimos `<p>Version 1.0</p>` por `<p>Version 2.0</p>`
 
 Entonces hacemos `build` de nuestra nueva versión.
 
-`docker build -t myapp:v1 .`
+`docker build -t myapp:v2 .`
 
 ---
 # Recreate
