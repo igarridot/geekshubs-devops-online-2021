@@ -10,7 +10,7 @@ marp: true
 <!-- _backgroundImage: url('./../../img/background-red.png') -->
 <!-- _color: white -->
 
-# 2.5 Desplegando Contenedores
+# 4 Desplegando Contenedores
 
 ---
 ![bg opacity:.2](https://media1.tenor.com/images/6c558a6366d2967e6de4ad294c3c4b7f/tenor.gif)
