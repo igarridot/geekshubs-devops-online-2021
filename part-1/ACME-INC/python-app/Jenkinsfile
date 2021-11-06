@@ -16,6 +16,9 @@ pipeline {
             }
         }
         stage('Build') {
+            when {
+                expression { env.BRANCH_NAME == 'master' }
+            }
             steps {
                 script {
                     dockerImage = docker.build("acme-app:${env.BRANCH_NAME}-${env.BUILD_ID}")

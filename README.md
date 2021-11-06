@@ -1,7 +1,7 @@
-# Bloque 2.5 - Desplegando contenedores
+# Bloque 4 - Desplegando contenedores
 
 ```
-Profesor: Pedro Díaz
+Profesor: Iván Garrido Tamarit
 ```
 
 ## Agenda
@@ -29,11 +29,11 @@ Para instalarlo podemos seguir las guías oficiales:
 
 También, si te resulta más cómodo crear una máquina virtual sería recomendable tener instalado:
 
-- VirtualBox
-- Vagrant
-    - Usaremos Ubuntu 18.04 LTS como OS base, `vagrant box add ubuntu/bionic64`
+- VirtualBox: https://www.virtualbox.org/wiki/Downloads
+- Vagrant: https://www.vagrantup.com/downloads
+    - Usaremos Ubuntu 20.04 LTS como OS base, `vagrant box add ubuntu/xenial64`
 
-En la segunda sesión tocaremos algo de Kubernetes y para que sea más fácil lo haremos directamente sobre ubuntu 18.04. Así que o bien Virtualbox o Vagrant. Si no sabes, no te preocupes. En la sesión podemos verlo.
+En la segunda sesión tocaremos algo de Kubernetes y para que sea más fácil lo haremos directamente sobre ubuntu 20.04. Así que o bien Virtualbox o Vagrant. Si no sabes, no te preocupes. En la sesión podemos verlo.
 
 Además es muy recomendable tener a mano un buen editor de código con el que nos sintamos cómodos. Personalmente recomiendo `vscode` de Microsoft. Es multiplataforma y tiene infinidad de plugins in configuraciones.
 
@@ -42,7 +42,7 @@ Además es muy recomendable tener a mano un buen editor de código con el que no
 Hay ciertos plugins para vscode que nos pueden ayudar pero no son para nada obligatorios:
 
 - Docker plugin: https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-docker
-- YAML suppor: https://marketplace.visualstudio.com/items?itemName=redhat.vscode-yaml
+- YAML support: https://marketplace.visualstudio.com/items?itemName=redhat.vscode-yaml
 - Gremlins tracker, plugin para ver código y carácteres que nos pueden dar problemas: https://marketplace.visualstudio.com/items?itemName=nhoizey.gremlins
 
 # Material de clase
@@ -56,4 +56,4 @@ Si decidís usar vscode con el plugin de `marp` podeis llegar a ver todo el mate
 ![](./img/entorno-trabajo.png)
 
 ----
-Geekhubs - DevOps Bootcamp 2020 - Pedro Díaz
+Geekhubs - DevOps Bootcamp 2021 - Iván Garrido

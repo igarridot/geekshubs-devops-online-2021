@@ -17,3 +17,11 @@ No hay que hacer ningún setup adicional
 Seguir el wizard y crear un repositorio.
 
 Seleccionar SQLlite como base de datos.
+
+Configurar URL del servicio:
+
+![Gogs URL config](../../../img/gogs_domain_config.png)
+
+Configurar cuenta de administrador:
+
+![Gogs Admin account setup](../../../img/gogs_admin.png)
