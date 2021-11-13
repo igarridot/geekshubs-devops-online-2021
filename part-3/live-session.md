@@ -13,11 +13,20 @@
 5) `kubectl apply -f manifests/jenkins-sa.yml`
 6) `kubectl apply -f manifests/jenkins.yml`
 
+
+## Configurar GOGS
+
+URL -> http://192.168.56.10:3000
+
+Seguir el wizard y crear un repositorio.
+- Seleccionar SQLlite
+- Como IP la que obteneis de `kubectl get svc`
+
 ## Configurar Jenkins
 
-URL -> http://10.10.10.10:8000
+URL -> http://192.168.56.10:8000
 
-1) `kubectl get po`
+1) `kubectl get pods`
 2) `kubectl logs -f jenkins-xxxxx`
 Extraer el token
 
@@ -40,10 +49,3 @@ Add cloud:
 
 Crear nuevo _Multibranch pipeline_
 
-## Configurar GOGS
-
-URL -> http://10.10.10.10:3000/
-
-Seguir el wizard y crear un repositorio.
-- Seleccionar SQLlite
-- Como IP la que obteneis de `kubectl get svc`
