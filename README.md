@@ -2,6 +2,8 @@
 
 ```
 Profesor: Iván Garrido Tamarit
+Primera sesión: 2021-11-19
+Segunda sesión: 2021-11-20
 ```
 
 ## Agenda
@@ -27,13 +29,13 @@ Para instalarlo podemos seguir las guías oficiales:
 - macOS: https://docs.docker.com/docker-for-mac/install/
 - Linux (ubuntu): https://docs.docker.com/engine/install/ubuntu/
 
-También, si te resulta más cómodo crear una máquina virtual sería recomendable tener instalado:
+También vamos a utilizar máquinas virtuales, así que necesitamos tener instalado:
 
-- VirtualBox: https://www.virtualbox.org/wiki/Downloads
+- VirtualBox + Guest Additions: https://www.virtualbox.org/wiki/Downloads
 - Vagrant: https://www.vagrantup.com/downloads
-    - Usaremos Ubuntu 20.04 LTS como OS base, `vagrant box add ubuntu/xenial64`
+    - Usaremos Ubuntu 20.04 LTS como OS base. Podéis ejecutar el siguiente comando para descargar la plantilla: `vagrant box add ubuntu/xenial64`
 
-En la segunda sesión tocaremos algo de Kubernetes y para que sea más fácil lo haremos directamente sobre ubuntu 20.04. Así que o bien Virtualbox o Vagrant. Si no sabes, no te preocupes. En la sesión podemos verlo.
+En la segunda sesión tocaremos algo de Kubernetes y para que sea más fácil lo haremos directamente sobre ubuntu 20.04. Si no sabes, no te preocupes. En la sesión podemos verlo.
 
 Además es muy recomendable tener a mano un buen editor de código con el que nos sintamos cómodos. Personalmente recomiendo `vscode` de Microsoft. Es multiplataforma y tiene infinidad de plugins in configuraciones.
 

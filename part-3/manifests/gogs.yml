@@ -17,7 +17,7 @@ spec:
     protocol: TCP
     name: gogs-ssh
   externalIPs:
-  - 10.10.10.10
+  - 192.168.56.10
   selector:
     service: gogs
   type: ClusterIP
