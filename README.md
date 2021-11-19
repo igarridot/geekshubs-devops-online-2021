@@ -33,7 +33,7 @@ También vamos a utilizar máquinas virtuales, así que necesitamos tener instal
 
 - VirtualBox + Guest Additions: https://www.virtualbox.org/wiki/Downloads
 - Vagrant: https://www.vagrantup.com/downloads
-    - Usaremos Ubuntu 20.04 LTS como OS base. Podéis ejecutar el siguiente comando para descargar la plantilla: `vagrant box add ubuntu/xenial64`
+    - Usaremos Ubuntu 20.04 LTS como OS base. Podéis ejecutar el siguiente comando para descargar la plantilla: `vagrant box add ubuntu/focal64`
 
 En la segunda sesión tocaremos algo de Kubernetes y para que sea más fácil lo haremos directamente sobre ubuntu 20.04. Si no sabes, no te preocupes. En la sesión podemos verlo.
 
